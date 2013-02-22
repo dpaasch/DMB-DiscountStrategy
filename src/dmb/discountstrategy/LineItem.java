@@ -19,6 +19,7 @@ public class LineItem {
     private double extendedCost;
     private double discountAmount;
     private double totalAmountDue;
+    // Product component
     private Product product;
     
     LineItem[][] lineItems = new LineItem[3][7];
