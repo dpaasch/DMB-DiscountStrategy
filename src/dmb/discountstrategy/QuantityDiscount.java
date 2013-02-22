@@ -30,9 +30,9 @@ public class QuantityDiscount implements DiscountStrategy {
         }
     }
 
-    public static void main(String[] args) {
-        QuantityDiscount discount = new QuantityDiscount();
-        double amount = discount.getDiscount(10, 6);
-        System.out.println(amount);
-    }
+//    public static void main(String[] args) {
+//        QuantityDiscount discount = new QuantityDiscount();
+//        double amount = discount.getDiscount(10, 6);
+//        System.out.println(amount);
+//    }
 }

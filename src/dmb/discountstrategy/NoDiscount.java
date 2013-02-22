@@ -22,10 +22,9 @@ public class NoDiscount implements DiscountStrategy {
         return discountRate;
     }
 
-    public static void main(String[] args) {
-        NoDiscount discount = new NoDiscount();
-        double amount = discount.getDiscount(10,2);
-        System.out.println(amount);
-    }
-
+//    public static void main(String[] args) {
+//        NoDiscount discount = new NoDiscount();
+//        double amount = discount.getDiscount(10,2);
+//        System.out.println(amount);
+//    }
 }

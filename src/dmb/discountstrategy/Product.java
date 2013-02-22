@@ -15,8 +15,10 @@ public class Product {
 //    private NoDiscount discount;
     private DiscountStrategy discount;
 
+    // Constructor takes productId, productName, unitCost, and discount.
 //    public Product(String prodId, String prodName, double cost) {
-    public Product(String prodId, String prodName, double cost, DiscountStrategy discount) {
+    public Product(String prodId, String prodName, double cost, 
+            DiscountStrategy discount) {
         this.productId = prodId;
         this.productName = prodName;
         this.unitCost = cost;
@@ -24,7 +26,6 @@ public class Product {
 //        discount = new QuantityDiscount();
 //        discount = new NoDiscount();
         this.discount = discount;
-
     }
 
     public double getDiscount(int quantity) {
@@ -55,16 +56,15 @@ public class Product {
         this.unitCost = unitCost;
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Product product = new Product("123", "Scarf", 20.00);
 //        double amt = discount.getDiscount(15);
 //        System.out.println(amt);
 //        DiscountStrategy discount = new FlatRateDiscount();
 //        DiscountStrategy discount = new QuantityDiscount();
-        DiscountStrategy discount = new NoDiscount();
+//        DiscountStrategy discount = new NoDiscount();
 //        discount.setDiscountRate(.10);
-        double amt = discount.getDiscount(10.00, 5);
-        System.out.println(amt);
-
-    }
+//        double amt = discount.getDiscount(10.00, 5);
+//        System.out.println(amt);
+//    }
 }

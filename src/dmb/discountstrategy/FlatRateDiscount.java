@@ -22,9 +22,9 @@ public class FlatRateDiscount implements DiscountStrategy {
         return price * quantity * discountRate;
     }
     
-    public static void main(String[] args) {
-        FlatRateDiscount discount = new FlatRateDiscount();
-        double amount = discount.getDiscount(10,2);
-        System.out.println(amount);
-    }
+//    public static void main(String[] args) {
+//        FlatRateDiscount discount = new FlatRateDiscount();
+//        double amount = discount.getDiscount(10,2);
+//        System.out.println(amount);
+//    }
 }
