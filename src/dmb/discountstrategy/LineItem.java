@@ -10,20 +10,58 @@ package dmb.discountstrategy;
  *
  * @author Dawn Bykowski
  */
-public class LineItem extends FakeDatabase {
+public class LineItem {
 
-    private Product product;
+    private String productId;
+    private int quantity;
     private double extendedUnitCost;
-    
+    private Product product;
 
+    public LineItem(String productId, int quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
+        product = new Product();
+    }
 
-    public double getExtendedUnitCost(double price, int quantity) {
-        return price * quantity;
+    public Product getProductId(String productId) {
+        return product.findProduct(productId);
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getExtendedUnitCost() {
+        return extendedUnitCost;
+    }
+
+    public void setExtendedUnitCost(double extendedUnitCost) {
+        this.extendedUnitCost = extendedUnitCost;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public String getLineItem() {
+        return product.toString();
     }
 
     public static void main(String[] args) {
-
-
+        LineItem lineItem = new LineItem("A100", 3);
+        System.out.println(lineItem.getLineItem());
 
     }
 }
