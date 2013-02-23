@@ -8,6 +8,7 @@ package dmb.discountstrategy;
  */
 public class FakeDatabase {
 
+
     // Customer Array
     private Customer[] customers = {
         new Customer("1001", "Francesca Piccinini"),
@@ -20,11 +21,10 @@ public class FakeDatabase {
         new Customer("1008", "Phil Mickelson"),
         new Customer("1009", "Natalie Coughlin"),
         new Customer("1010", "Ricky Fowler")};
-    
     // Products Array
     private Product[] products = {
         new Product("A100", "Queensize Comforter", 150.00, new FlatRateDiscount()),
-        new Product("A110", "Queensize Sheetset",  45.75, new NoDiscount()),
+        new Product("A110", "Queensize Sheetset", 45.75, new NoDiscount()),
         new Product("B101", "Men's Dress Shirt - Peacock Blue", 35.50, new QuantityDiscount()),
         new Product("B200", "Men's Golf Slacks - Black", 44.75, new FlatRateDiscount()),
         new Product("B278", "Men's Belt - Large", 18.95, new QuantityDiscount()),
@@ -33,4 +33,33 @@ public class FakeDatabase {
         new Product("D268", "Bath Towel - Beige", 18.95, new FlatRateDiscount()),
         new Product("D345", "Hand Towel - Beige", 12.50, new NoDiscount()),
         new Product("D654", "Washcloth - Beige", 12.50, new QuantityDiscount())};
+
+    public final Customer findCustomer(final String custId) {
+        // validation is needed
+        Customer customer = null;
+        for (Customer c : customers) {
+            if (custId.equals(c.getCustomerId())) {
+                customer = c;
+                break;
+            }
+        }
+
+        return customer;
+    }
+
+    // Just call this method to find a product in the array by its id.
+    // Returns null if not found.
+    public final Product findProduct(final String prodId) {
+        // validation is needed
+        Product product = null;
+        for (Product p : products) {
+            if (prodId.equals(p.getProductId())) {
+                product = p;
+                break;
+            }
+        }
+
+        return product;
+    }
 }
+

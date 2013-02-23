@@ -1,5 +1,7 @@
 package dmb.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  * High-level class provides the product information and it's discount.
  *
@@ -16,12 +18,12 @@ public class Product {
     private DiscountStrategy discount;
 
     // Constructor takes productId, productName, unitCost, and discount.
-//    public Product(String prodId, String prodName, double cost) {
-    public Product(String prodId, String prodName, double cost, 
+    //    public Product(String prodId, String prodName, double cost) {
+    public Product(String productId, String productName, double unitCost,
             DiscountStrategy discount) {
-        this.productId = prodId;
-        this.productName = prodName;
-        this.unitCost = cost;
+        this.productId = productId;
+        this.productName = productName;
+        this.unitCost = unitCost;
 //        discount = new FlatRateDiscount();
 //        discount = new QuantityDiscount();
 //        discount = new NoDiscount();

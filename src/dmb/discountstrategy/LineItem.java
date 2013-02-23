@@ -10,19 +10,20 @@ package dmb.discountstrategy;
  *
  * @author Dawn Bykowski
  */
-public class LineItem {
+public class LineItem extends FakeDatabase {
 
-    private String productId;
-    private String productName;
-    private double unitCost;
-    private int quantity;
-    private double extendedCost;
-    private double discountAmount;
-    private double totalAmountDue;
-    // Product component
     private Product product;
+    private double extendedUnitCost;
     
-    LineItem[][] lineItems = new LineItem[3][7];
 
+
+    public double getExtendedUnitCost(double price, int quantity) {
+        return price * quantity;
+    }
+
+    public static void main(String[] args) {
+
+
+
+    }
 }
-
