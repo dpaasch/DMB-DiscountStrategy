@@ -10,7 +10,7 @@ public class FakeDatabase {
 
 
     // Customer Array
-    private Customer[] customers = {
+    Customer[] customers = {
         new Customer("1001", "Francesca Piccinini"),
         new Customer("1002", "Dale Earnhardt Jr."),
         new Customer("1003", "Natalie Gulbis"),
