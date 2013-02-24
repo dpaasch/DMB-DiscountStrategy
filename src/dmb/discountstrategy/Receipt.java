@@ -12,6 +12,8 @@ public class Receipt {
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
 
+
+    
     //Retrieve customer information from the database
     public String getCustomer(String customerId) {
         FakeDatabase fakeDatabase = new FakeDatabase();
@@ -23,12 +25,9 @@ public class Receipt {
     public final void addItemToSale(String prodId, int qty) {
         FakeDatabase fakeDatabase = new FakeDatabase();
         Product product = fakeDatabase.findProduct(prodId);
-
-
         if (product != null) {
             addLineItem(product, qty);
         }
-
     }
 
     public final void addLineItem(Product product, int qty) {
@@ -44,24 +43,39 @@ public class Receipt {
     }
     
     public final double getSubTotal(){
-
+        double total = 0.00;
+        for (int i = 0; i < lineItems.length; i++) {
+            total += (lineItems[i].getUnitCost() * lineItems[i].getQuantity());
+        }
+        return total;
     }
-        
+    
+    public final double getFinalTotal() {
+        double total = 0.00;
+        for (int i = 0; i < lineItems.length; i++) {
+            total += (lineItems[i].getSubtotal());
+        }
+        return total;
+    }
+    
     public final void getReceipt() {
-        System.out.println("\t\tStore Receipt");
-        System.out.println("\t\t Store #1112");
+        System.out.println("**Store Receipt**");
+        System.out.println("**Store #1112**");
         System.out.println("CustomerId \t Customer Name");
-        customer.getCustomer();
+        //customer.getCustomer();
         System.out.println("Product Id \t Product Name \t UnitCost \t Qty \t"
                 + "Extended Cost \t Amount Saved");
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
         }
+        System.out.println("\t\t_____________________");
+        System.out.println("\t\tSubtotal: " + getSubTotal());
+        System.out.println("\t\tTotal After Discount ");
     }
     public static void main(String[] args) {
-        Receipt receipt = new Receipt("1001");
+        Receipt receipt = new Receipt("1001", "Francesca Piccinini");
+        receipt.getCustomer("A101");
         receipt.getReceipt();
-        
     }
 
 }

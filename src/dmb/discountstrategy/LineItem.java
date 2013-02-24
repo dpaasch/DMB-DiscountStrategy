@@ -34,19 +34,21 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    public double getExtendedUnitCost() {
-        return (product.getUnitCost() * quantity);
+    public double getUnitCost() {
+        return product.getUnitCost();
     }
 
+    public double getSubtotal() {
+        double savings = (product.getUnitCost() * quantity) 
+                - product.getDiscount(quantity);
+        return savings;
+    }
+    
     public final String getLineItem() {
-        String prodId = product.getProductId();
-        String prodName = product.getProductName();
-        double unitCost = product.getUnitCost();
-        int qty = quantity;
-        double extCost = getExtendedUnitCost();
-        double discount = product.getDiscount(quantity);
-        return  prodId + "\t" + prodName + "\t" + unitCost + "\t" + qty + "\t" 
-                + extCost + "\t" + discount;
+        double extCost = (getUnitCost() * quantity);
+        return product.getProductId() + " " + product.getProductName() + " "
+                + getUnitCost() + " " + quantity + " " + extCost + " "
+                + product.getDiscount(quantity);
     }
 
 //    public static void main(String[] args) {
