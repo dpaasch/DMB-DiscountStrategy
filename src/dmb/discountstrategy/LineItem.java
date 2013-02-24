@@ -14,16 +14,15 @@ public class LineItem {
 
     private String productId;
     private int quantity;
+    private double itemTotalBefore;
+    private double itemTotalAfter;
     private Product product;
 
     public LineItem(String productId, int quantity) {
         this.productId = productId;
         this.quantity = quantity;
-    }
-        
-    public LineItem(Product product, int quantity) {
-        this.product = product;
-        this.quantity = quantity;
+        product = new Product("A100", "Queensize Comforter", 150.00,
+                new FlatRateDiscount());
     }
 
     public int getQuantity() {
@@ -34,25 +33,38 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    public double getUnitCost() {
-        return product.getUnitCost();
+    public double getItemTotalBeforeDiscount() {
+        itemTotalBefore = (product.getUnitCost() * quantity);
+        return itemTotalBefore;
     }
 
-    public double getSubtotal() {
-        double savings = (product.getUnitCost() * quantity) 
+    public double getItemTotalAfterDiscount() {
+        itemTotalAfter = (product.getUnitCost() * quantity)
                 - product.getDiscount(quantity);
-        return savings;
+        return itemTotalAfter;
     }
     
+    public double getItemTotalSavings() {
+        double itemSavings = itemTotalBefore - itemTotalAfter;
+        return itemSavings;
+    }
+
     public final String getLineItem() {
-        double extCost = (getUnitCost() * quantity);
-        return product.getProductId() + " " + product.getProductName() + " "
-                + getUnitCost() + " " + quantity + " " + extCost + " "
+        return "Id " + "     Product Name \t\t" + " Unit Cost \t"
+                + " Quantity \t" + " Amount Saved \n"
+                + "----------------------------------------------------------"
+                + "-------------------\n"
+                + product.getProductId() + "\t" + product.getProductName() + " \t "
+                + product.getUnitCost() + " \t\t " + quantity + " \t\t "
                 + product.getDiscount(quantity);
     }
 
-//    public static void main(String[] args) {
-//        LineItem lineItem = new LineItem("A101",3);
-//        System.out.println(lineItem.getLineItem());
-//    }
+    public static void main(String[] args) {
+        LineItem lineItem = new LineItem("A101", 3);
+        System.out.println(lineItem.getQuantity());
+        System.out.println(lineItem.getItemTotalBeforeDiscount());
+        System.out.println(lineItem.getItemTotalAfterDiscount());
+        System.out.println(lineItem.getItemTotalSavings());
+        System.out.println(lineItem.getLineItem());
+    }
 }
