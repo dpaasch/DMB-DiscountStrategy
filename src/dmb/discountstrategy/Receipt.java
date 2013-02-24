@@ -68,20 +68,15 @@ public class Receipt {
     
     public final void generateReceipt() {        
         System.out.println("ID\t" + "Customer Name");
-//        System.out.println("----------------------------------");
         customer.getCustomer();
         System.out.println("==================================");
-        System.out.println("Prod ID" + "  Prod Name\t" + "Qty\t" 
-                + "Unit Price\t" + "Subtotal");
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
         }
-        // Create a DecimalFormat object to better display the pay rate
-        DecimalFormat dollar = new DecimalFormat("#,##0.00");
         System.out.println();        
-        System.out.println("Total Before Discount: \t" + dollar.format(getSubTotal()));
-        System.out.println("Total With Discount: \t" + dollar.format(getDiscountedTotal()));
-        System.out.println("Final Total: \t\t" + dollar.format(getFinalTotal()));
+        System.out.println("Total Before Discount: \t" +getSubTotal());
+        System.out.println("Total With Discount: \t" + getDiscountedTotal());
+        System.out.println("Final Total: \t\t" + getFinalTotal());
     }    
 
 //    public static void main(String[] args) {
