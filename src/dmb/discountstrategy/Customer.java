@@ -34,4 +34,8 @@ public class Customer {
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     } 
+
+    public final void getCustomer() {
+        System.out.println(customerId + "\t" + customerName);
+    }
 }
