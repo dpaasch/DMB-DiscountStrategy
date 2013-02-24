@@ -5,7 +5,7 @@ package dmb.discountstrategy;
  *
  * @author Dawn Bykowski
  */
-public class Product extends FakeDatabase{
+public class Product {
 
     private String productId;
     private String productName;
@@ -58,18 +58,6 @@ public class Product extends FakeDatabase{
 
     public void setUnitCost(double unitCost) {
         this.unitCost = unitCost;
-    }
-    
-    // Method toString(): represents the state of an object
-    @Override
-    public String toString() {
-
-        String product = " Product Id: \t" + productId
-                + " Product Name: \t" + productName
-                + " Unit Cost: \t" + unitCost
-                + " Discount Amoutn: \t" + discount;
-        // Return the string.
-        return product;
     }
 
 //    public static void main(String[] args) {

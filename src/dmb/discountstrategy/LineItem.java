@@ -1,5 +1,7 @@
 package dmb.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  * Lab #3: Create a LineItem class that has a Product component. Think about
  * what a LineItem class should be responsible for? Given a prodId it should be
@@ -14,21 +16,16 @@ public class LineItem {
 
     private String productId;
     private int quantity;
-    private double extendedUnitCost;
     private Product product;
-
+        
     public LineItem(String productId, int quantity) {
         this.productId = productId;
         this.quantity = quantity;
-        product = new Product();
     }
 
-    public Product getProductId(String productId) {
-        return product.findProduct(productId);
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public LineItem(Product product, int quantity) {
+        this.product = product.findProduct(productId);
+        this.quantity = quantity;
     }
 
     public int getQuantity() {
@@ -40,28 +37,27 @@ public class LineItem {
     }
 
     public double getExtendedUnitCost() {
-        return extendedUnitCost;
+        return (product.getUnitCost() * quantity);
     }
 
-    public void setExtendedUnitCost(double extendedUnitCost) {
-        this.extendedUnitCost = extendedUnitCost;
-    }
+    public final String getLineItem() {
+        String prodId = productId;
+        String productName = product.getProductName();
+        double unitCost = product.getUnitCost();
+        int qty = quantity;        
+        double extCost = getExtendedUnitCost();
+        double discount = product.getDiscount(quantity);
+        return  "Product ID \t Product Name \t Unit Cost \t Quanity \t "
+                + "Extended Price \t Amount Saved \n"
+                + "------------------------------------------------------\n"
+                + prodId + productName + unitCost + qty + extCost + discount;
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public String getLineItem() {
-        return product.toString();
+                
+      
     }
 
     public static void main(String[] args) {
         LineItem lineItem = new LineItem("A100", 3);
         System.out.println(lineItem.getLineItem());
-
     }
 }
