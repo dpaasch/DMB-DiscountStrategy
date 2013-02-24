@@ -2,7 +2,9 @@ package dmb.discountstrategy;
 
 /**
  * High-level class provides the product information and it's discount.
- *
+ * Lab #2: Build the Product class and add a strategy component. Now test this class
+ * by putting a main method in it and running it with some hard coded input.
+ * 
  * @author Dawn Bykowski
  */
 public class Product {

@@ -10,7 +10,7 @@ public class FakeDatabase {
 
 
     // Customer Array
-    Customer[] customers = {
+    private Customer[] customers = {
         new Customer("1001", "Francesca Piccinini"),
         new Customer("1002", "Dale Earnhardt Jr."),
         new Customer("1003", "Natalie Gulbis"),
@@ -22,7 +22,7 @@ public class FakeDatabase {
         new Customer("1009", "Natalie Coughlin"),
         new Customer("1010", "Ricky Fowler")};
     // Products Array
-   Product[] products = {
+   private Product[] products = {
         new Product("A100", "Queensize Comforter", 150.00, new FlatRateDiscount()),
         new Product("A110", "Queensize Sheetset", 45.75, new NoDiscount()),
         new Product("B101", "Men's Dress Shirt - Peacock Blue", 35.50, new QuantityDiscount()),
