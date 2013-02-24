@@ -17,12 +17,17 @@ public class LineItem {
     private double itemTotalBefore;
     private double itemTotalAfter;
     private Product product;
-
+    
     public LineItem(String productId, int quantity) {
         this.productId = productId;
         this.quantity = quantity;
         product = new Product("A100", "Queensize Comforter", 150.00,
                 new FlatRateDiscount());
+    }
+    
+     public LineItem(Product product, int quantity) {
+        this.quantity = quantity;
+        this.product = product;
     }
 
     public int getQuantity() {
@@ -58,13 +63,12 @@ public class LineItem {
                 + product.getUnitCost() + " \t\t " + quantity + " \t\t "
                 + product.getDiscount(quantity);
     }
-
-    public static void main(String[] args) {
-        LineItem lineItem = new LineItem("A101", 3);
-        System.out.println(lineItem.getQuantity());
-        System.out.println(lineItem.getItemTotalBeforeDiscount());
-        System.out.println(lineItem.getItemTotalAfterDiscount());
-        System.out.println(lineItem.getItemTotalSavings());
-        System.out.println(lineItem.getLineItem());
-    }
+//    public static void main(String[] args) {
+//        LineItem lineItem = new LineItem("A101", 3);
+//        System.out.println(lineItem.getQuantity());
+//        System.out.println(lineItem.getItemTotalBeforeDiscount());
+//        System.out.println(lineItem.getItemTotalAfterDiscount());
+//        System.out.println(lineItem.getItemTotalSavings());
+//        System.out.println(lineItem.getLineItem());
+//    }
 }

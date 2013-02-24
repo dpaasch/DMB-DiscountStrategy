@@ -12,6 +12,9 @@ public class Receipt {
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
 
+    public Receipt(Customer customer) {
+        this.customer = new Customer("1003", "Natalie Gulbis");
+    }  
 
     
     //Retrieve customer information from the database
@@ -73,9 +76,8 @@ public class Receipt {
         System.out.println("\t\tTotal After Discount ");
     }
     public static void main(String[] args) {
-        Receipt receipt = new Receipt("1001", "Francesca Piccinini");
-        receipt.getCustomer("A101");
-        receipt.getReceipt();
+        Receipt receipt = new Receipt();
+
     }
 
 }
