@@ -1,7 +1,5 @@
 package dmb.discountstrategy;
 
-import java.text.DecimalFormat;
-
 /**
  * Lab #4: Create a Receipt class that has an array of LineItem objects, and a
  * Customer property. Now give it some responsibilities. Think carefully about
@@ -42,41 +40,46 @@ public class Receipt {
         lineItems = tempItems;
     }
 
-    public final double getSubTotal() {
-        double sTotal = 0.00;
-        for (int i = 0; i < lineItems.length; i++) {
-            sTotal += (lineItems[i].getItemTotalBeforeDiscount());
+    public double getSubTotal() {
+        double total = 0.00;  // Accumulator
+        for (LineItem item: lineItems) {
+            total += item.getSubtotal();
         }
-        return sTotal;
+        return total;
     }
 
-    public final double getDiscountedTotal() {
+    public double getDiscount() {
         double dTotal = 0.00;
         for (int i = 0; i < lineItems.length; i++) {
-            dTotal += (lineItems[i].getItemTotalAfterDiscount());
+            dTotal += (lineItems[i].getDiscount());
         }
         return dTotal;
     }
 
-    public final double getFinalTotal() {
-        double gTotal = 0.00;
-        for (int i = 0; i < lineItems.length; i++) {
-            gTotal += (getSubTotal() - getDiscountedTotal());
+    public double getGrandTotal() {
+        double grandTotal = 0.00;
+        for (LineItem item : lineItems) {
+            grandTotal += (item.getSubtotal() - item.getDiscount());
         }
-        return gTotal;
+            
+        return grandTotal;
     }
     
     public final void generateReceipt() {        
         System.out.println("ID\t" + "Customer Name");
         customer.getCustomer();
         System.out.println("==================================");
+        System.out.println("Id " + "     Product Name \t\t" + " Unit Cost \t"
+                + " Quantity \t" + " Extended Cost \t" + " Amount Saved \n"
+                + "----------------------------------------------------------"
+                + "---------------------------------------------\n");
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
         }
         System.out.println();        
-        System.out.println("Total Before Discount: \t" +getSubTotal());
-        System.out.println("Total With Discount: \t" + getDiscountedTotal());
-        System.out.println("Final Total: \t\t" + getFinalTotal());
+        System.out.println("SubTotal: \t" + getSubTotal());
+        System.out.println("Discount Amt: \t " + getDiscount());
+        System.out.println("Grand Total: \t" + getGrandTotal());
     }    
 
 //    public static void main(String[] args) {

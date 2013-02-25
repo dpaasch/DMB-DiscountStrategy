@@ -37,38 +37,28 @@ public class LineItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public double getItemTotalBeforeDiscount() {
-        itemTotalBefore = (product.getUnitCost() * quantity);
-        return itemTotalBefore;
-    }
-
-    public double getItemTotalAfterDiscount() {
-        itemTotalAfter = (product.getUnitCost() * quantity)
-                - product.getDiscount(quantity);
-        return itemTotalAfter;
+    
+    public double getSubtotal() {
+       double total = product.getUnitCost() * quantity;
+       return total;
+    } 
+    
+    public double getDiscount() {
+        double discount = product.getDiscount(quantity);
+        return discount;
     }
     
-    public double getItemTotalSavings() {
-        double itemSavings = itemTotalBefore - itemTotalAfter;
-        return itemSavings;
-    }
-
-    public final String getLineItem() {
-        return "Id " + "     Product Name \t\t" + " Unit Cost \t"
-                + " Quantity \t" + " Amount Saved \n"
-                + "----------------------------------------------------------"
-                + "-------------------\n"
-                + product.getProductId() + "\t" + product.getProductName() + " \t "
-                + product.getUnitCost() + " \t\t " + quantity + " \t\t "
+    public final String getLineItem() {       
+        return product.getProductId() + "\t" + product.getProductName() + " \t "
+                + product.getUnitCost() + " \t\t " + quantity + " \t\t " 
+                + (product.getUnitCost() * quantity) + " \t\t " 
                 + product.getDiscount(quantity);
     }
 //    public static void main(String[] args) {
 //        LineItem lineItem = new LineItem("A101", 3);
 //        System.out.println(lineItem.getQuantity());
-//        System.out.println(lineItem.getItemTotalBeforeDiscount());
-//        System.out.println(lineItem.getItemTotalAfterDiscount());
-//        System.out.println(lineItem.getItemTotalSavings());
+//        System.out.println(lineItem.getSubtotal());
+//        System.out.println(lineItem.getDiscount());
 //        System.out.println(lineItem.getLineItem());
 //    }
 }

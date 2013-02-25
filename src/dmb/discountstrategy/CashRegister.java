@@ -26,11 +26,12 @@ public class CashRegister {
         receipt.generateReceipt();
     }
     
-    public static void main(String[] args) {
-        Receipt receipt = new Receipt();
-        receipt.getCustomer("1005");
-        receipt.addItemToSale("C410", 2);
-        receipt.addItemToSale("C222", 4);
-        receipt.generateReceipt();
-    }
+//    public static void main(String[] args) {
+//        Receipt receipt = new Receipt();
+//        receipt.getCustomer("1005");
+//        receipt.addItemToSale("A100", 3);
+//        receipt.addItemToSale("C410", 2);
+//        receipt.addItemToSale("C222", 6);
+//        receipt.generateReceipt();
+//    }
 }
