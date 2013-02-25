@@ -14,7 +14,7 @@ public class CashRegister {
         this.receipt = new Receipt();
     }
     
-    public final void getCustomer(String customerId) {
+    public final void startSale(String customerId) {
         receipt.getCustomer(customerId);
     }
     
