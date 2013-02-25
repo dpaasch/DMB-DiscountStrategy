@@ -24,15 +24,15 @@ public class FakeDatabase {
     // Products Array
    private Product[] products = {
         new Product("A100", "Queensize Comforter", 150.00, new FlatRateDiscount()),
-        new Product("A110", "Queensize Sheetset", 45.75, new NoDiscount()),
-        new Product("B101", "Men's Dress Shirt - Peacock Blue", 35.50, new QuantityDiscount()),
-        new Product("B200", "Men's Golf Slacks - Black", 44.75, new FlatRateDiscount()),
-        new Product("B278", "Men's Belt - Large", 18.95, new QuantityDiscount()),
-        new Product("C410", "Women's Dress - Medium", 38.50, new NoDiscount()),
-        new Product("C222", "Women's Tights - Navy", 12.50, new QuantityDiscount()),
-        new Product("D268", "Bath Towel - Beige", 18.95, new FlatRateDiscount()),
-        new Product("D345", "Hand Towel - Beige", 12.50, new NoDiscount()),
-        new Product("D654", "Washcloth - Beige", 12.50, new QuantityDiscount())};
+        new Product("A110", "Queensize Sheetset ", 45.75 , new NoDiscount()),
+        new Product("B101", "Men's Dress Shirt  ", 35.50 , new QuantityDiscount()),
+        new Product("B200", "Men's Golf Slacks  ", 44.75 , new FlatRateDiscount()),
+        new Product("B278", "Men's Belt         ", 18.95 , new QuantityDiscount()),
+        new Product("C410", "Women's Dress      ", 38.50 , new NoDiscount()),
+        new Product("C222", "Women's Tights     ", 12.50 , new QuantityDiscount()),
+        new Product("D268", "Bath Towel         ", 18.95 , new FlatRateDiscount()),
+        new Product("D345", "Hand Towel         ", 12.50 , new NoDiscount()),
+        new Product("D654", "Washcloth          ", 12.50 , new QuantityDiscount())};
 
     public final Customer findCustomer(final String custId) {
         // validation is needed

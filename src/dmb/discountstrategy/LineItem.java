@@ -49,7 +49,7 @@ public class LineItem {
     }
     
     public final String getLineItem() {       
-        return product.getProductId() + "\t" + product.getProductName() + " \t "
+        return product.getProductId() + " \t " + product.getProductName() + " \t "
                 + product.getUnitCost() + " \t\t " + quantity + " \t\t " 
                 + (product.getUnitCost() * quantity) + " \t\t " 
                 + product.getDiscount(quantity);

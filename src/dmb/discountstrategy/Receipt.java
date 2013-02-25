@@ -66,20 +66,20 @@ public class Receipt {
     }
     
     public final void generateReceipt() {        
-        System.out.println("ID\t" + "Customer Name");
-        customer.getCustomer();
-        System.out.println("==================================");
-        System.out.println("Id " + "     Product Name \t\t" + " Unit Cost \t"
-                + " Quantity \t" + " Extended Cost \t" + " Amount Saved \n"
+        System.out.println(" \t\tCustomer ID: " + customer.getCustomerId()
+                + "\tCustomer Name: " + customer.getCustomerName());
+        System.out.println("Id \t" + " Product Name \t\t" + "Unit Cost \t"
+                + "Quantity \t" + "Extended Cost \t" + "Amount Saved \n"
                 + "----------------------------------------------------------"
-                + "---------------------------------------------\n");
+                + "---------------------------------------------");
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
-        }
-        System.out.println();        
-        System.out.println("SubTotal: \t" + getSubTotal());
-        System.out.println("Discount Amt: \t " + getDiscount());
-        System.out.println("Grand Total: \t" + getGrandTotal());
+        }   
+        System.out.println("\t\t\t\t\t\t\t\t ------------");
+        System.out.println(" \t\t\t\t\t\tSubTotal: \t " + getSubTotal());
+        System.out.println(" \t\t\t\t\t\tDiscount Amt: \t " + getDiscount());
+        System.out.println(" \t\t\t\t\t\tGrand Total: \t " + getGrandTotal());
+        System.out.println();
     }    
 
 //    public static void main(String[] args) {
