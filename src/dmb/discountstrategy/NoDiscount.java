@@ -1,7 +1,7 @@
 package dmb.discountstrategy;
 
 /**
- * Low level class provides a $0.00 amount.
+ * Low level class returns a $0.00 amount.
  *
  * @author Dawn Bykowski
  */
@@ -12,8 +12,8 @@ public class NoDiscount implements DiscountStrategy {
     // No-arg constructor
     public NoDiscount() {
     }
+    
     // Constructor: accepts discountRate as parameter
-
     public NoDiscount(double discountRate) {
         this.discountRate = discountRate;
     }
@@ -48,13 +48,13 @@ public class NoDiscount implements DiscountStrategy {
         return discountRate;
     }
 
-    public static void main(String[] args) {
-        NoDiscount discount = new NoDiscount();
+//    public static void main(String[] args) {
+//        NoDiscount discount = new NoDiscount();
 //        double amount = discount.getDiscount(10, 2);
 //        double amount = discount.getDiscount(1, 0);
-        double amount = discount.getDiscount(0.00, 1);
+//        double amount = discount.getDiscount(0.00, 1);
 //        System.out.println(amount);
-        discount.setDiscountRate(1.00);
-        System.out.println(discount.getDiscountRate());
-    }
+//        discount.setDiscountRate(1.00);
+//        System.out.println(discount.getDiscountRate());
+//    }
 }

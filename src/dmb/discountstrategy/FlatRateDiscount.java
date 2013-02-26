@@ -27,8 +27,8 @@ public class FlatRateDiscount implements DiscountStrategy {
     @Override
     public void setDiscountRate(double discountRate) {
         // Validation of discountRate parameter
-        if (discountRate < 0.00 || discountRate > 0.00) {
-            System.out.println("Discount Rate cannot be greater than 0.00");
+        if (discountRate <= 0.00) {
+            System.out.println("Discount Rate cannot be 0.00");
         } else {
             this.discountRate = discountRate;
         }
