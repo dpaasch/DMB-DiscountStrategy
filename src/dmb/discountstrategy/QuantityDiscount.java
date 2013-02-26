@@ -9,7 +9,7 @@ package dmb.discountstrategy;
 public class QuantityDiscount implements DiscountStrategy {
 
     private double discountRate = .10;
-    private int quantity;
+
 
     @Override
     public double getDiscountRate() {
@@ -22,9 +22,9 @@ public class QuantityDiscount implements DiscountStrategy {
     }
 
     @Override
-    public double getDiscount(double price, int quantity) {
+    public double getDiscount(double cost, int quantity) {
         if (quantity >= 5) {
-            return price * quantity * discountRate;
+            return cost * quantity * discountRate;
         } else {
             return 0.00;
         }

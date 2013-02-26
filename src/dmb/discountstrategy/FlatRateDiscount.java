@@ -7,6 +7,13 @@ package dmb.discountstrategy;
 public class FlatRateDiscount implements DiscountStrategy {
     private double discountRate = .10;
 
+    public FlatRateDiscount() {
+    }
+
+    public FlatRateDiscount(double discountRate) {
+        this.discountRate = discountRate; 
+    }
+
     @Override
     public double getDiscountRate() {
         return discountRate;
@@ -18,8 +25,8 @@ public class FlatRateDiscount implements DiscountStrategy {
     }
 
     @Override
-    public double getDiscount(double price, int quantity) {
-        return price * quantity * discountRate;
+    public double getDiscount(double cost, int quantity) {
+        return cost * quantity * discountRate;
     }
     
 //    public static void main(String[] args) {

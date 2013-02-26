@@ -20,16 +20,16 @@ public class Receipt {
     }
 
     // Retrieve product information from the database
-    public final void addItemToSale(String prodId, int qty) {
+    public final void addItemToSale(String productId, int quantity) {
         FakeDatabase fakeDatabase = new FakeDatabase();
-        Product product = fakeDatabase.findProduct(prodId);
+        Product product = fakeDatabase.findProduct(productId);
         if (product != null) {
-            addLineItem(product, qty);
+            addLineItem(product, quantity);
         }
     }
 
-    public final void addLineItem(Product product, int qty) {
-        LineItem item = new LineItem(product, qty);
+    public final void addLineItem(Product product, int quantity) {
+        LineItem item = new LineItem(product, quantity);
         addToArray(item);
     }
 

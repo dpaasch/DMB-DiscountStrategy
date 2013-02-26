@@ -12,22 +12,21 @@ package dmb.discountstrategy;
  */
 public class LineItem {
 
-    private String productId;
+//    private String productId;// not needed, provided by product
     private int quantity;
-    private double itemTotalBefore;
-    private double itemTotalAfter;
     private Product product;
-    
+
     public LineItem(String productId, int quantity) {
-        this.productId = productId;
+        FakeDatabase db = new FakeDatabase();
+        product = db.findProduct(productId);
         this.quantity = quantity;
-        product = new Product("A100", "Queensize Comforter", 150.00,
-                new FlatRateDiscount());
+//        product = new Product("A100", "Queensize Comforter", 150.00,
+//                new FlatRateDiscount());  // creating product here is rigid!
     }
-    
-     public LineItem(Product product, int quantity) {
-        this.quantity = quantity;
+
+    public LineItem(Product product, int quantity) {
         this.product = product;
+        this.quantity = quantity;
     }
 
     public int getQuantity() {
@@ -37,21 +36,21 @@ public class LineItem {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
     public double getSubtotal() {
-       double total = product.getUnitCost() * quantity;
-       return total;
-    } 
-    
+        double total = product.getUnitCost() * quantity;
+        return total;
+    }
+
     public double getDiscount() {
         double discount = product.getDiscount(quantity);
         return discount;
     }
-    
-    public final String getLineItem() {       
+
+    public final String getLineItem() {
         return product.getProductId() + " \t " + product.getProductName() + " \t "
-                + product.getUnitCost() + " \t\t " + quantity + " \t\t " 
-                + (product.getUnitCost() * quantity) + " \t\t " 
+                + product.getUnitCost() + " \t\t " + quantity + " \t\t "
+                + (product.getUnitCost() * quantity) + " \t\t "
                 + product.getDiscount(quantity);
     }
 //    public static void main(String[] args) {
@@ -60,5 +59,9 @@ public class LineItem {
 //        System.out.println(lineItem.getSubtotal());
 //        System.out.println(lineItem.getDiscount());
 //        System.out.println(lineItem.getLineItem());
+//        Product prod = new Product("A100", "Queensize Comforter", 150.00,
+//                new FlatRateDiscount());
+//        LineItem item = new LineItem(prod, 3);
+//        System.out.println(item.getLineItem());
 //    }
 }

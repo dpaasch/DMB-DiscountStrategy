@@ -10,7 +10,7 @@ package dmb.discountstrategy;
  */
 public interface DiscountStrategy {
 
-    public abstract double getDiscount(double price, int quantity);
+    public abstract double getDiscount(double cost, int quantity);
 
     public abstract double getDiscountRate();
 
