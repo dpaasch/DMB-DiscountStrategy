@@ -1,9 +1,10 @@
 package dmb.discountstrategy;
 
 /**
- * Low level class returns a $0.00 amount.
+ * This is a Low-level class that is responsible for providing a $0.00 amount 
+ * discount on items purchased.
  *
- * @author Dawn Bykowski
+ * @author dawn bykowski, dpaasch@my.wctc.edu
  */
 public class NoDiscount implements DiscountStrategy {
 

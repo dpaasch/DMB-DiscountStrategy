@@ -2,7 +2,7 @@ package dmb.discountstrategy;
 
 /**
  * This is a Low-level class that is responsible for providing a flat rate 
- * discount.
+ * discount on items purchased.
  *
  * @author dawn bykowski, dpaasch@my.wctc.edu
  */
@@ -20,11 +20,17 @@ public class FlatRateDiscount implements DiscountStrategy {
     }
 
     // Accessor / Mutator Methods from Discount Strategy
+    /** This method gets the discount rate.
+     * @return the discounted rate
+     */
     @Override
     public double getDiscountRate() {
         return discountRate;
     }
 
+    /** This method sets the discounted rate to the value specified by the 
+     * parameter.
+     */
     @Override
     public void setDiscountRate(double discountRate) {
         // Validation of discountRate parameter
@@ -35,6 +41,9 @@ public class FlatRateDiscount implements DiscountStrategy {
         }
     }
 
+    /** This method calculates the discount given the cost and the quantity. 
+     * @return discount amount
+     */
     @Override
     public double getDiscount(double cost, int quantity) {
          if (cost <= 0.00) {

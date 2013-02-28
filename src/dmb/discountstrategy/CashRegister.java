@@ -18,8 +18,8 @@ public class CashRegister {
         receipt.getCustomer(customerId);
     }
     
-    public final void addItemToSale(String prodId, int qty) {
-        receipt.addItemToSale(prodId, qty);
+    public final void addLineItem(String productId, int quantity) {
+        receipt.addLineItem(productId, quantity);
     }
     
     public final void finalizeSale() {

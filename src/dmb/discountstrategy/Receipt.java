@@ -1,5 +1,8 @@
 package dmb.discountstrategy;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Lab #4: Create a Receipt class that has an array of LineItem objects, and a
  * Customer property. Now give it some responsibilities. Think carefully about
@@ -16,20 +19,11 @@ public class Receipt {
     public String getCustomer(String customerId) {
         FakeDatabase fakeDatabase = new FakeDatabase();
         customer = fakeDatabase.findCustomer(customerId);
-        return customerId ;
+        return customerId;
     }
 
-    // Retrieve product information from the database
-    public final void addItemToSale(String productId, int quantity) {
-        FakeDatabase fakeDatabase = new FakeDatabase();
-        Product product = fakeDatabase.findProduct(productId);
-        if (product != null) {
-            addLineItem(product, quantity);
-        }
-    }
-
-    public final void addLineItem(Product product, int quantity) {
-        LineItem item = new LineItem(product, quantity);
+    public final void addLineItem(String productId, int quantity) {
+        LineItem item = new LineItem(productId, quantity);
         addToArray(item);
     }
 
@@ -42,7 +36,7 @@ public class Receipt {
 
     public double getSubTotal() {
         double total = 0.00;  // Accumulator
-        for (LineItem item: lineItems) {
+        for (LineItem item : lineItems) {
             total += item.getSubtotal();
         }
         return total;
@@ -61,11 +55,18 @@ public class Receipt {
         for (LineItem item : lineItems) {
             grandTotal += (item.getSubtotal() - item.getDiscount());
         }
-            
+
         return grandTotal;
     }
-    
-    public final void generateReceipt() {        
+
+    public final void generateReceipt() {
+        System.out.println(" \t\t\t\t\tWelcome to Kohl's");
+        SimpleDateFormat DATE_FORMATTER =
+                new SimpleDateFormat(" \t\t\t\t\t EEE, dd MMM YYYY "
+                + "\n \t\t\t\t\t HH:mm:ss a");
+        String dateTime = DATE_FORMATTER.format(new Date());
+        System.out.println(dateTime);
+        System.out.println();
         System.out.println(" \t\tCustomer ID: " + customer.getCustomerId()
                 + "\tCustomer Name: " + customer.getCustomerName());
         System.out.println("Id \t" + " Product Name \t\t" + "Unit Cost \t"
@@ -74,14 +75,26 @@ public class Receipt {
                 + "---------------------------------------------");
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
-        }   
+        }
         System.out.println("\t\t\t\t\t\t\t\t ------------");
-        System.out.println(" \t\t\t\t\t\tSubTotal: \t " + getSubTotal());
-        System.out.println(" \t\t\t\t\t\tDiscount Amt: \t " + getDiscount());
-        System.out.println(" \t\t\t\t\t\tGrand Total: \t " + getGrandTotal());
+        System.out.printf(" \t\t\t\t\t\tSubTotal: \t $%,.2f%n", getSubTotal());
+        System.out.printf(" \t\t\t\t\t\tDiscount Amt: \t $% ,.2f%n", getDiscount());
+        System.out.printf(" \t\t\t\t\t\tGrand Total: \t $%,.2f%n", getGrandTotal());
         System.out.println();
-    }    
-
+        System.out.println(" \t\t\tThank you for shopping at Kohl's!");
+        System.out.println();
+    }
+        
+    // Retrieve product information from the database - Removed so dependency 
+    // upon product is not required.
+//    public final void addItemToSale(String productId, int quantity) {
+//        FakeDatabase fakeDatabase = new FakeDatabase();
+//        Product product = fakeDatabase.findProduct(productId);
+//        if (product != null) {
+//            addLineItem(product, quantity);
+//        }
+//    }
+    
 //    public static void main(String[] args) {
 //        Receipt receipt = new Receipt();
 //        receipt.getCustomer("1003");
