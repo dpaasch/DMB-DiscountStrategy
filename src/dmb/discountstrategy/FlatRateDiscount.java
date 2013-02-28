@@ -1,9 +1,10 @@
 package dmb.discountstrategy;
 
 /**
- * A Low-level class that calculates a discount
+ * This is a Low-level class that is responsible for providing a flat rate 
+ * discount.
  *
- * @author dawn bykowski
+ * @author dawn bykowski, dpaasch@my.wctc.edu
  */
 public class FlatRateDiscount implements DiscountStrategy {
 
