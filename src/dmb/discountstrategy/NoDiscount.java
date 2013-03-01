@@ -20,9 +20,9 @@ public class NoDiscount implements DiscountStrategy {
     }
 
     // Accessor / Mutator Methods from Discount Strategy
-   /** This method gets the discount rate.
+    /** This method gets the discount rate.
      * @return the discounted rate
-     */ 
+     */
     @Override
     public double getDiscountRate() {
         return discountRate;
@@ -30,6 +30,7 @@ public class NoDiscount implements DiscountStrategy {
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
+     * @param discountRate
      */
     @Override
     public void setDiscountRate(double discountRate) {
@@ -42,6 +43,8 @@ public class NoDiscount implements DiscountStrategy {
     }
 
     /** This method calculates the discount given the cost and the quantity. 
+     * @param cost
+     * @param quantity
      * @return discount amount
      */
     @Override

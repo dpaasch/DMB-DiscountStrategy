@@ -30,6 +30,7 @@ public class FlatRateDiscount implements DiscountStrategy {
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
+     * @param discountRate
      */
     @Override
     public void setDiscountRate(double discountRate) {
@@ -42,6 +43,8 @@ public class FlatRateDiscount implements DiscountStrategy {
     }
 
     /** This method calculates the discount given the cost and the quantity. 
+     * @param cost
+     * @param quantity
      * @return discount amount
      */
     @Override
