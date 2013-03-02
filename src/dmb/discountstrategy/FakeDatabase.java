@@ -11,28 +11,28 @@ public class FakeDatabase {
 
     // Customer Array
     private Customer[] customers = {
-        new Customer("1001", "Francesca Piccinini"),
-        new Customer("1002", "Dale Earnhardt Jr."),
-        new Customer("1003", "Natalie Gulbis"),
-        new Customer("1004", "Donald Driver"),
-        new Customer("1005", "Tina Charles"),
-        new Customer("1006", "Kevin Durant"),
-        new Customer("1007", "Michelle Wie"),
-        new Customer("1008", "Phil Mickelson"),
-        new Customer("1009", "Natalie Coughlin"),
-        new Customer("1010", "Ricky Fowler")};
+        new Customer("1001","Francesca Piccinini"),
+        new Customer("1002","Dale Earnhardt Jr."),
+        new Customer("1003","Natalie Gulbis"),
+        new Customer("1004","Donald Driver"),
+        new Customer("1005","Tina Charles"),
+        new Customer("1006","Kevin Durant"),
+        new Customer("1007","Michelle Wie"),
+        new Customer("1008","Phil Mickelson"),
+        new Customer("1009","Natalie Coughlin"),
+        new Customer("1010","Ricky Fowler")};
     // Products Array
    private Product[] products = {
-        new Product("A100", "Queensize Comforter", 150.00, new FlatRateDiscount()),
-        new Product("A110", "Queensize Sheetset ", 45.75 , new NoDiscount()),
-        new Product("B101", "Men's Dress Shirt  ", 35.50 , new QuantityDiscount()),
-        new Product("B200", "Men's Golf Slacks  ", 44.75 , new FlatRateDiscount()),
-        new Product("B278", "Men's Belt         ", 18.95 , new QuantityDiscount()),
-        new Product("C410", "Women's Dress      ", 38.50 , new NoDiscount()),
-        new Product("C222", "Women's Tights     ", 12.50 , new QuantityDiscount()),
-        new Product("D268", "Bath Towel         ", 18.95 , new FlatRateDiscount()),
-        new Product("D345", "Hand Towel         ", 12.50 , new NoDiscount()),
-        new Product("D654", "Washcloth          ", 12.50 , new QuantityDiscount())};
+        new Product("92303192","4-pc. Comforter Set - Queen",359.99,new FlatRateDiscount()),
+        new Product("93056001","Sateen Sheet Set - Queen   ",149.99,new FlatRateDiscount()),
+        new Product("92021665","Regular Jeans - Men        ", 58.00,new QuantityDiscount()),
+        new Product("90889775","Classic-Fit Pleated Pants  ", 55.00,new FlatRateDiscount()),
+        new Product("93099876","Solid Pique Polo           ", 39.50,new QuantityDiscount()),
+        new Product("89174290","3-pk. Cushioned-Sole Socks ", 18.00,new QuantityDiscount()),
+        new Product("93208741","Colorblock Sheath Dress    ", 90.00,new NoDiscount()),
+        new Product("90261977","Curvy Bootcut Jeans        ", 54.00,new QuantityDiscount()),
+        new Product("93516223","Solid Empire Knot-Front Top", 36.00,new FlatRateDiscount()),
+        new Product("93017033","Floral Net-to-Waist Tights ", 12.50,new NoDiscount())};
 
     public final Customer findCustomer(final String custId) {
         // validation is needed

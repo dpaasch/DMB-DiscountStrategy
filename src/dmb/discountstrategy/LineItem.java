@@ -60,9 +60,9 @@ public class LineItem {
      * the Receipt class.
      * @return line item values */
     public final String getLineItem() {
-        return product.getProductId() + " \t " + product.getProductName() + " \t "
-                + product.getUnitCost() + " \t\t " + quantity + " \t\t "
-                + (product.getUnitCost() * quantity) + " \t\t "
+        return product.getProductId() + "   " + product.getProductName() + " \t "
+                + product.getUnitCost() + "   \t" + quantity + " \t"
+                + (product.getUnitCost() * quantity) + " \t\t"
                 + product.getDiscount(quantity);
     }
 //    public static void main(String[] args) {
