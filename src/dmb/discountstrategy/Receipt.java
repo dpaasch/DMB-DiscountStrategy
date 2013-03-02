@@ -20,7 +20,7 @@ public class Receipt {
      * @return customer number and customer name */
     //Retrieve customer information from the database
     public String getCustomer(String customerId) {
-        if (customerId == null) {
+        if (customerId != null) {
             System.out.println("Customer Number cannot be blank");
         }
         FakeDatabase fakeDatabase = new FakeDatabase();
@@ -122,7 +122,6 @@ public class Receipt {
         System.out.println();
         System.out.println(" \t\t\t\tTHANK YOU FOR SHOPPING AT KOHL'S");
         System.out.println("\n");
-        
     }
         
     // Retrieve product information from the database - Removed so dependency 
