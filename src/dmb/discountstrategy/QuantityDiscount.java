@@ -20,8 +20,7 @@ public class QuantityDiscount implements DiscountStrategy {
     }
 
     /** This method gets the discount rate.
-     * @return the discounted rate
-     */
+     * @return the discounted rate */
     @Override
     public double getDiscountRate() {
         return discountRate;
@@ -29,8 +28,7 @@ public class QuantityDiscount implements DiscountStrategy {
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
-     * @param discountRate
-     */
+     * @param discountRate */
     @Override
     public void setDiscountRate(double discountRate) {
         // Validation of discountRate parameter
@@ -44,8 +42,7 @@ public class QuantityDiscount implements DiscountStrategy {
     /** This method calculates the discount given the cost and the quantity. 
      * @param cost
      * @param quantity
-     * @return discount amount
-     */
+     * @return discount amount */
     @Override
     public double getDiscount(double cost, int quantity) {
         if (quantity >= 3) {
