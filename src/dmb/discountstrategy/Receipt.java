@@ -79,18 +79,11 @@ public class Receipt {
         }
         return grandTotal;
     }
-
+    
+    /** This method generates the actual receipt.  It calls both the
+     * generateReceiptHeader and generateReceiptFooter private methods. */
     public final void generateReceipt() {
-        System.out.println("KOHL'S");
-        System.out.println("Westbrook Shopping Center");
-        System.out.println("Waukesha, WI 53186");
-        System.out.println("(262) 547-6323");
-        System.out.println();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-YY HH:mm a");
-        String dateTime = dateFormat.format(new Date());
-        System.out.println(dateTime + "\t 0091/0001/7103/2 1008XXX");
-        System.out.println("ID # 999-8983-8787-4675-9908-9828-9647");
-        System.out.println();
+        generateReceiptHeader();
         System.out.println("Customer ID: " + customer.getCustomerId()
                 + "\tCustomer Name: " + customer.getCustomerName());
         System.out.println("Id      " + "   Product Name               " 
@@ -101,12 +94,33 @@ public class Receipt {
         for (int i = 0; i < lineItems.length; i++) {
             System.out.println(lineItems[i].getLineItem());
         }
+        generateReceiptFooter();
+    }
+    
+        /** This method generates the receipt header */
+    private final void generateReceiptHeader() {
+        System.out.println("  \t\t\t\t\t KOHL'S  ");
+        System.out.println("  \t\t\t\tWestbrook Shopping Center");
+        System.out.println("  \t\t\t\t    Waukesha, WI 53186  ");
+        System.out.println("  \t\t\t\t      (262) 547-6323  ");
+        System.out.println();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-YY HH:mm a");
+        String dateTime = dateFormat.format(new Date());
+        System.out.println("  \t\t" + dateTime + "\t 0091/0001/7103/2 1008XXX");
+        System.out.println("ID # 999-8983-8787-4675-9908-9828-9647");
+        System.out.println();
+    }
+    
+    /** This method generates the receipt footer which includes the subtotal,
+     * the total, and the amount saved. */
+    private final void generateReceiptFooter() {
         System.out.println();
         System.out.printf(" \t\t\t\t\t\tSUBTOTAL  \t$%,.2f%n", getSubTotal());
+        System.out.printf("\t\t\t\t\t\tTOTAL SAVED  \t$% ,.2f%n", getDiscount());
         System.out.printf(" \t\t\t\t\t\tTOTAL     \t$%,.2f%n", getGrandTotal());
         System.out.println();
-        System.out.printf(" \t\t\t\t\tTOTAL SAVED: \t$% ,.2f%n", getDiscount());
-        System.out.println(" \t\t\tTHANK YOU FOR SHOPPING AT KOHL'S");
+
+        System.out.println(" \t\t\t\tTHANK YOU FOR SHOPPING AT KOHL'S");
         System.out.println();
     }
         

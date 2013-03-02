@@ -27,14 +27,20 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    /** This method gets the quantity of the product being purchased.
-     * @return quantity */
+    /**
+     * This method gets the quantity of the product being purchased.
+     *
+     * @return quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
-    /** This method sets the quantity provided by the user
-     * @param quantity */
+    /**
+     * This method sets the quantity provided by the user
+     *
+     * @param quantity
+     */
     public void setQuantity(int quantity) {
         if (quantity <= 0) {
             System.out.println("Quantity must be greater than 0");
@@ -42,23 +48,32 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    /** This method gets the subtotal by calculating the unit cost * quantity.
-     * @return total */
+    /**
+     * This method gets the subtotal by calculating the unit cost * quantity.
+     *
+     * @return total
+     */
     public double getSubtotal() {
         double total = product.getUnitCost() * quantity;
         return total;
     }
 
-    /** This method gets the amount of the discount from the product class.
-     * @return the amount of the discount */
+    /**
+     * This method gets the amount of the discount from the product class.
+     *
+     * @return the amount of the discount
+     */
     public double getDiscount() {
         double discount = product.getDiscount(quantity);
         return discount;
     }
 
-    /** This method gets the information for the line item that is created within
+    /**
+     * This method gets the information for the line item that is created within
      * the Receipt class.
-     * @return line item values */
+     *
+     * @return line item values
+     */
     public final String getLineItem() {
         return product.getProductId() + "   " + product.getProductName() + " \t "
                 + product.getUnitCost() + "   \t" + quantity + " \t"
