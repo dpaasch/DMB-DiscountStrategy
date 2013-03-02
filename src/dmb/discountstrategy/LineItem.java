@@ -1,5 +1,7 @@
 package dmb.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  * This class is responsible for gathering information from the product class to
  * be used in creating the line item for the Receipt class.
@@ -27,58 +29,50 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    /**
-     * This method gets the quantity of the product being purchased.
-     *
-     * @return quantity
-     */
+    /** This method gets the quantity of the product being purchased.     
+     * @return quantity */
     public int getQuantity() {
         return quantity;
     }
 
-    /**
-     * This method sets the quantity provided by the user
-     *
-     * @param quantity
-     */
+    /** This method sets the quantity provided by the user     
+     * @param quantity */
     public void setQuantity(int quantity) {
-        if (quantity <= 0) {
+        if (quantity > 0) {
+            this.quantity = quantity;
+        } else {
             System.out.println("Quantity must be greater than 0");
         }
-        this.quantity = quantity;
     }
 
-    /**
-     * This method gets the subtotal by calculating the unit cost * quantity.
-     *
-     * @return total
-     */
+    /** This method gets the subtotal by calculating the unit cost * quantity.
+     * @return total */
     public double getSubtotal() {
         double total = product.getUnitCost() * quantity;
         return total;
     }
 
-    /**
-     * This method gets the amount of the discount from the product class.
-     *
-     * @return the amount of the discount
-     */
+    /** This method gets the amount of the discount from the product class.
+     * @return the amount of the discount */
     public double getDiscount() {
         double discount = product.getDiscount(quantity);
         return discount;
     }
 
-    /**
-     * This method gets the information for the line item that is created within
+    /** This method gets the information for the line item that is created within
      * the Receipt class.
-     *
-     * @return line item values
-     */
+     * @return line item values */
     public final String getLineItem() {
-        return product.getProductId() + "   " + product.getProductName() + " \t "
-                + product.getUnitCost() + "   \t" + quantity + " \t"
-                + (product.getUnitCost() * quantity) + " \t\t"
-                + product.getDiscount(quantity);
+        String pId = product.getProductId();
+        String pName = product.getProductName();
+        double uCost = product.getUnitCost();
+        double extendedCost = (product.getUnitCost() * quantity);
+        double pDiscount = product.getDiscount(quantity);
+        
+        // Create a decimal format object to format the dollar amounts
+        DecimalFormat df = new DecimalFormat("$#,##0.00");  
+        return pId + "   " + pName + "   " + df.format(uCost) + " \t " + quantity
+                + "\t" + df.format(extendedCost) + "\t\t" + df.format(pDiscount);
     }
 //    public static void main(String[] args) {
 //        LineItem lineItem = new LineItem("A101", 3);

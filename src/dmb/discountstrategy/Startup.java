@@ -13,6 +13,7 @@ public class Startup {
         CashRegister cashRegister2 = new CashRegister();        
         cashRegister2.startSale("1002");
         cashRegister2.addLineItem("92021665", 6);
+        cashRegister2.addLineItem("93099876", 3);
         cashRegister2.finalizeSale();
         
         CashRegister cashRegister3 = new CashRegister();        
