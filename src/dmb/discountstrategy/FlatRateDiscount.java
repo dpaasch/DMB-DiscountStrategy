@@ -19,7 +19,6 @@ public class FlatRateDiscount implements DiscountStrategy {
         this.discountRate = discountRate;
     }
 
-    // Accessor / Mutator Methods from Discount Strategy
     /** This method gets the discount rate.
      * @return the discounted rate
      */

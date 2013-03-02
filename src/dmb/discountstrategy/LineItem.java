@@ -1,21 +1,18 @@
 package dmb.discountstrategy;
 
 /**
- * Lab #3: Create a LineItem class that has a Product component. Think about
- * what a LineItem class should be responsible for? Given a prodId it should be
- * able to lookup the product in the database, create the product and store it
- * internally as a property. Then, it should be able to return all the
- * information about that lineItem that the receipt would need to know. Now
- * write some test code in this class to see if it works.
+ * This class is responsible for gathering information from the product class to
+ * be used in creating the line item for the Receipt class.
  *
- * @author Dawn Bykowski
+ * @author Dawn Bykowski, dpaasch@my.wctc.edu
  */
 public class LineItem {
 
-//    private String productId;// not needed, provided by product
     private int quantity;
     private Product product;
 
+    // Constructor: Accepts productId, which it finds in the database, and the
+    // quantity.
     public LineItem(String productId, int quantity) {
         FakeDatabase db = new FakeDatabase();
         product = db.findProduct(productId);
@@ -24,16 +21,29 @@ public class LineItem {
 //                new FlatRateDiscount());  // creating product here is rigid!
     }
 
+    // Constructor: Accepts a product and quantity
     public LineItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }
 
+    /**
+     * This method gets the quantity of the product being purchased.
+     * @return quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
+    /**
+     * This method sets the quantity provided by the user
+     * @param quantity
+     */
     public void setQuantity(int quantity) {
+        if (quantity <= 0) {
+            System.out.println("Quantity must be greater than 0");
+
+        }
         this.quantity = quantity;
     }
 
