@@ -9,8 +9,8 @@ package dmb.discountstrategy;
 public class CashRegister {
 
     private Receipt receipt;
-
-    // Constructor: requires a receipt object
+    
+    /** Constructor: requires a receipt object */
     public CashRegister() {
         this.receipt = new Receipt();
     }

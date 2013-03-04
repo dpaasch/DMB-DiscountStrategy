@@ -10,16 +10,17 @@ public class NoDiscount implements DiscountStrategy {
 
     private double discountRate = 0.00;
 
-    // No-arg constructor
+    /** No-argument constructor */
     public NoDiscount() {
     }
     
-    // Constructor: accepts discountRate as parameter
+    /** Constructor: accepts discountRate as parameter */
     public NoDiscount(double discountRate) {
         this.discountRate = discountRate;
     }
 
     /** This method gets the discount rate.
+     * 
      * @return the discounted rate */
     @Override
     public double getDiscountRate() {
@@ -28,6 +29,7 @@ public class NoDiscount implements DiscountStrategy {
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
+     * 
      * @param discountRate */
     @Override
     public void setDiscountRate(double discountRate) {
@@ -39,12 +41,13 @@ public class NoDiscount implements DiscountStrategy {
         }
     }
 
-    /** This method calculates the discount given the cost and the quantity. 
+    /** This method calculates the discount given the cost and the quantity.
+     * 
      * @param cost
      * @param quantity
      * @return discount amount */
     @Override
-    public double getDiscount(double cost, int quantity) {
+    public double calculateDiscount(double cost, int quantity) {
         if (cost <= 0.00) {
             System.out.println("Cost must be greater than 0.00");
         } 

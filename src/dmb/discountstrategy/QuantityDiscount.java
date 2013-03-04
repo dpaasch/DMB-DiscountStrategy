@@ -10,11 +10,11 @@ public class QuantityDiscount implements DiscountStrategy {
 
     private double discountRate = .10;
 
-    // No-arg constructor
+    /** No-argument constructor */
     public QuantityDiscount() {
     }
 
-    // Constructor: accepts discountRate as parameter
+    /** Constructor: accepts discountRate as parameter */
     public QuantityDiscount(double discountRate) {
         this.discountRate = discountRate;
     }
@@ -44,7 +44,7 @@ public class QuantityDiscount implements DiscountStrategy {
      * @param quantity
      * @return discount amount */
     @Override
-    public double getDiscount(double cost, int quantity) {
+    public double calculateDiscount(double cost, int quantity) {
         if (quantity >= 3) {
             return cost * quantity * discountRate;
         } else {

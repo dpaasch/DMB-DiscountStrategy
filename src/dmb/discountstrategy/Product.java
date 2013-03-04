@@ -16,12 +16,12 @@ public class Product {
 //    private NoDiscount discount;
     private DiscountStrategy discount;
     
-    // No-arg constructor
+    /** No-argument constructor */
     public Product() {
     }
 
-    // Constructor: accepts productId, productName, unitCost, and discount as 
-    // parameters.
+    /** Constructor: accepts productId, productName, unitCost, and discount as 
+     * parameters. */
     //    public Product(String prodId, String prodName, double cost) {
     public Product(String productId, String productName, double unitCost,
             DiscountStrategy discount) {
@@ -38,11 +38,11 @@ public class Product {
      * provided.
      * @param quantity
      * @return the amount of the discount */
-    public double getDiscount(int quantity) {
+    public double calculateDiscount(int quantity) {
         if (quantity <= 0) {
             System.out.println("Quantity must be greater than 0");
         }
-        return discount.getDiscount(unitCost, quantity);
+        return discount.calculateDiscount(unitCost, quantity);
     }
 
     /** This method gets the product id, which is a number unique to the product.

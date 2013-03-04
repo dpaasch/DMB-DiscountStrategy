@@ -10,16 +10,17 @@ public class FlatRateDiscount implements DiscountStrategy {
 
     private double discountRate = .10;
 
-    // No-arg constructor
+    /** No-argument constructor */
     public FlatRateDiscount() {
     }
 
-    // Constructor: accepts discountRate as parameter
+    /** Constructor: accepts discountRate as parameter */
     public FlatRateDiscount(double discountRate) {
         this.discountRate = discountRate;
     }
 
     /** This method gets the discount rate.
+     * 
      * @return the discounted rate */
     @Override
     public double getDiscountRate() {
@@ -28,6 +29,7 @@ public class FlatRateDiscount implements DiscountStrategy {
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
+     * 
      * @param discountRate */
     @Override
     public void setDiscountRate(double discountRate) {
@@ -40,11 +42,12 @@ public class FlatRateDiscount implements DiscountStrategy {
     }
 
     /** This method calculates the discount given the cost and the quantity. 
+     * 
      * @param cost
      * @param quantity
      * @return discount amount */
     @Override
-    public double getDiscount(double cost, int quantity) {
+    public double calculateDiscount(double cost, int quantity) {
          if (cost <= 0.00) {
             System.out.println("Cost must be greater than 0.00");
         } 
@@ -56,6 +59,7 @@ public class FlatRateDiscount implements DiscountStrategy {
         }
         return cost * quantity * discountRate;
     }
+
 //    public static void main(String[] args) {
 //        FlatRateDiscount discount = new FlatRateDiscount();
 //        double amount = discount.getDiscount(10,2);

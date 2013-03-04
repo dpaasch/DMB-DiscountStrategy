@@ -12,9 +12,9 @@ public class LineItem {
 
     private int quantity;
     private Product product;
-
-    // Constructor: Accepts productId, which it finds in the database, and the
-    // quantity as parameters.
+    
+    /** Constructor: accepts productId, which it finds in the database, and the
+     * quantity as parameters. */
     public LineItem(String productId, int quantity) {
         FakeDatabase db = new FakeDatabase();
         product = db.findProduct(productId);
@@ -23,7 +23,7 @@ public class LineItem {
 //                new FlatRateDiscount());  // creating product here is rigid!
     }
 
-    // Constructor: Accepts a product and quantity as parameters.
+    /** Constructor: accepts a product and quantity as parameters. */
     public LineItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
@@ -47,16 +47,14 @@ public class LineItem {
 
     /** This method gets the subtotal by calculating the unit cost * quantity.
      * @return total */
-    public double getSubtotal() {
-        double total = product.getUnitCost() * quantity;
-        return total;
+    public double calculateSubtotal() {
+        return product.getUnitCost() * quantity;
     }
 
     /** This method gets the amount of the discount from the product class.
      * @return the amount of the discount */
-    public double getDiscount() {
-        double discount = product.getDiscount(quantity);
-        return discount;
+    public double calculateDiscount() {
+        return product.calculateDiscount(quantity);
     }
 
     /** This method gets the information for the line item that is created within
@@ -67,7 +65,7 @@ public class LineItem {
         String pName = product.getProductName();
         double uCost = product.getUnitCost();
         double extendedCost = (product.getUnitCost() * quantity);
-        double pDiscount = product.getDiscount(quantity);
+        double pDiscount = product.calculateDiscount(quantity);
         
         // Create a decimal format object to format the dollar amounts
         DecimalFormat df = new DecimalFormat("$#,##0.00");  

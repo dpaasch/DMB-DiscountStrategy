@@ -21,7 +21,6 @@ public class Receipt {
      *
      * @return customer number and customer name
      */
-    //Retrieve customer information from the database
     public String getCustomer(String customerId) {
         if (customerId != null) {
             FakeDatabase fakeDatabase = new FakeDatabase();
@@ -66,10 +65,10 @@ public class Receipt {
      *
      * @return subtotal
      */
-    public double getSubTotal() {
+    public double calculateSubtotal() {
         double total = 0.00;  // Accumulator
         for (LineItem item : lineItems) {
-            total += item.getSubtotal();
+            total += item.calculateSubtotal();
         }
         return total;
     }
@@ -80,10 +79,10 @@ public class Receipt {
      *
      * @return amount saved (total discounts)
      */
-    public double getDiscount() {
-        double dTotal = 0.00;
+    public double calculateDiscount() {
+        double dTotal = 0.00;  // Accumulator
         for (int i = 0; i < lineItems.length; i++) {
-            dTotal += (lineItems[i].getDiscount());
+            dTotal += (lineItems[i].calculateDiscount());
         }
         return dTotal;
     }
@@ -94,10 +93,10 @@ public class Receipt {
      *
      * @return grand total
      */
-    public double getGrandTotal() {
-        double grandTotal = 0.00;
+    public double calculateGrandTotal() {
+        double grandTotal = 0.00;  // Accumulator
         for (LineItem item : lineItems) {
-            grandTotal += (item.getSubtotal() - item.getDiscount());
+            grandTotal += (item.calculateSubtotal() - item.calculateDiscount());
         }
         return grandTotal;
     }
@@ -141,9 +140,9 @@ public class Receipt {
      */
     private final void generateReceiptFooter() {
         System.out.println();
-        System.out.printf(" \t\t\t\t\t\tSUBTOTAL  \t$%,.2f%n", getSubTotal());
-        System.out.printf("\t\t\t\t\t\tTOTAL SAVED  \t$% ,.2f%n", getDiscount());
-        System.out.printf(" \t\t\t\t\t\tTOTAL     \t$%,.2f%n", getGrandTotal());
+        System.out.printf(" \t\t\t\t\t\tSUBTOTAL  \t$%,.2f%n", calculateSubtotal());
+        System.out.printf("\t\t\t\t\t\tTOTAL SAVED  \t$% ,.2f%n", calculateDiscount());
+        System.out.printf(" \t\t\t\t\t\tTOTAL     \t$%,.2f%n", calculateGrandTotal());
         System.out.println();
         System.out.println(" \t\t\t\tTHANK YOU FOR SHOPPING AT KOHL'S");
         System.out.println("\n");
