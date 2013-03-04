@@ -34,10 +34,13 @@ public class Product {
         this.discount = discount;
     }
 
-    /** This method gets the amount of the discount, after a quantity has been
+    /** 
+     * This method gets the amount of the discount, after a quantity has been
      * provided.
+     * 
      * @param quantity
-     * @return the amount of the discount */
+     * @return the amount of the discount 
+     */
     public double calculateDiscount(int quantity) {
         if (quantity <= 0) {
             System.out.println("Quantity must be greater than 0");
@@ -45,14 +48,20 @@ public class Product {
         return discount.calculateDiscount(unitCost, quantity);
     }
 
-    /** This method gets the product id, which is a number unique to the product.
-     * @return the product identifier */
+    /** 
+     * This method gets the product id, which is a number unique to the product.
+     * 
+     * @return the product identifier 
+     */
     public String getProductId() {
         return productId;
     }
 
-    /** This method sets the product identifier to the value entered by the user.
-     * @param productId */
+    /** 
+     * This method sets the product identifier to the value entered by the user.
+     * 
+     * @param productId 
+     */
     public void setProductId(String productId) {
         if (productId == null) {
             System.out.println("The productId cannot be blank");
@@ -60,14 +69,20 @@ public class Product {
         this.productId = productId;
     }
 
-    /** This method gets the product name.
-     * @return the product name */
+    /** 
+     * This method gets the product name.
+     * 
+     * @return the product name 
+     */
     public String getProductName() {
         return productName;
     }
 
-    /** This method sets the product name to the value entered by the user.
-     * @param productName */
+    /** 
+     * This method sets the product name to the value entered by the user.
+     * 
+     * @param productName 
+     */
     public void setProductName(String productName) {
         if (productName == null) {
             System.out.println("The product name cannot be blank");
@@ -75,15 +90,21 @@ public class Product {
         this.productName = productName;
     }
 
-    /** This method gets the product unit cost to be used in calculating the
+    /** 
+     * This method gets the product unit cost to be used in calculating the
      * discount later.
-     * @return the unit cost */
+     * 
+     * @return the unit cost 
+     */
     public double getUnitCost() {
         return unitCost;
     }
 
-    /** This method sets the product unit cost to the value entered by the user.
-     * @param unitCost */
+    /** 
+     * This method sets the product unit cost to the value entered by the user.
+     * 
+     * @param unitCost 
+     */
     public void setUnitCost(double unitCost) {
         if (unitCost <= 0.00) {
             System.out.println("The unit cost must be greater than 0.00");
