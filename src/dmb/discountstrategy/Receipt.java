@@ -20,9 +20,9 @@ public class Receipt {
      * @return customer number and customer name */
     //Retrieve customer information from the database
     public String getCustomer(String customerId) {
-        if (customerId != null) {
-            System.out.println("Customer Number cannot be blank");
-        }
+//        if (customerId != null) {
+//            System.out.println("Customer Number cannot be blank");
+//        }
         FakeDatabase fakeDatabase = new FakeDatabase();
         customer = fakeDatabase.findCustomer(customerId);
         return customerId;

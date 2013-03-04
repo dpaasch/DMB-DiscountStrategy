@@ -5,7 +5,7 @@ package dmb.discountstrategy;
  * @author Dawn Bykowski
  */
 public class Customer {
-    
+
     private String customerId;
     private String customerName;
 
@@ -20,7 +20,11 @@ public class Customer {
     }
 
     public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+        if (customerId != null) {
+            this.customerId = customerId;
+        } else {
+            System.out.println("Customer Id cannot be blank");
+        }
     }
 
     public String getCustomerName() {
@@ -28,8 +32,12 @@ public class Customer {
     }
 
     public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    } 
+        if (customerName != null) {
+            this.customerName = customerName;
+        } else {
+            System.out.println("Customer name cannot be blank");
+        }
+    }
 
     public final void getCustomer() {
         System.out.println(customerId + "\t" + customerName);
