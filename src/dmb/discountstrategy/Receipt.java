@@ -15,6 +15,10 @@ public class Receipt {
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
     
+    /** No-argument constructor */
+    public Receipt() {
+        
+    }
     /** Constructor: accepts customer parameter (must have a customer to begin a
      * transaction (receipt) */
     public Receipt(Customer customer){
