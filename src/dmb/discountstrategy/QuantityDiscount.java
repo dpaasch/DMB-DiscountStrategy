@@ -36,7 +36,7 @@ public class QuantityDiscount implements DiscountStrategy {
      * @param discountRate 
      */
     @Override
-    public void setDiscountRate(double discountRate) {
+    public final void setDiscountRate(double discountRate) {
         // Validation of discountRate parameter
         if (discountRate <= 0.00) {
             System.out.println("Discount Rate cannot be 0.00");
@@ -53,7 +53,7 @@ public class QuantityDiscount implements DiscountStrategy {
      * @return discount amount 
      */
     @Override
-    public double calculateDiscount(double cost, int quantity) {
+    public final double calculateDiscount(double cost, int quantity) {
         if (quantity >= 3) {
             return cost * quantity * discountRate;
         } else {

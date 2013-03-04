@@ -41,7 +41,7 @@ public class Product {
      * @param quantity
      * @return the amount of the discount 
      */
-    public double calculateDiscount(int quantity) {
+    public final double calculateDiscount(int quantity) {
         if (quantity <= 0) {
             System.out.println("Quantity must be greater than 0");
         }
@@ -62,7 +62,7 @@ public class Product {
      * 
      * @param productId 
      */
-    public void setProductId(String productId) {
+    public final void setProductId(String productId) {
         if (productId == null) {
             System.out.println("The productId cannot be blank");
         }
@@ -83,7 +83,7 @@ public class Product {
      * 
      * @param productName 
      */
-    public void setProductName(String productName) {
+    public final void setProductName(String productName) {
         if (productName == null) {
             System.out.println("The product name cannot be blank");
         }
@@ -105,7 +105,7 @@ public class Product {
      * 
      * @param unitCost 
      */
-    public void setUnitCost(double unitCost) {
+    public final void setUnitCost(double unitCost) {
         if (unitCost <= 0.00) {
             System.out.println("The unit cost must be greater than 0.00");
         }

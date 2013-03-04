@@ -32,7 +32,7 @@ public class Customer {
      *
      * @param customerId
      */
-    public void setCustomerId(String customerId) {
+    public final void setCustomerId(String customerId) {
         if (customerId != null) {
             this.customerId = customerId;
         } else {
@@ -54,7 +54,7 @@ public class Customer {
      *
      * @param customerName
      */
-    public void setCustomerName(String customerName) {
+    public final void setCustomerName(String customerName) {
         if (customerName != null) {
             this.customerName = customerName;
         } else {

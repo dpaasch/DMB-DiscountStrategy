@@ -43,7 +43,7 @@ public class LineItem {
      * 
      * @param quantity 
      */
-    public void setQuantity(int quantity) {
+    public final void setQuantity(int quantity) {
         if (quantity > 0) {
             this.quantity = quantity;
         } else {

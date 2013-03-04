@@ -34,7 +34,7 @@ public class FlatRateDiscount implements DiscountStrategy {
      * @param discountRate 
      */
     @Override
-    public void setDiscountRate(double discountRate) {
+    public final void setDiscountRate(double discountRate) {
         // Validation of discountRate parameter
         if (discountRate <= 0.00) {
             System.out.println("Discount Rate cannot be 0.00");
@@ -50,7 +50,7 @@ public class FlatRateDiscount implements DiscountStrategy {
      * @return discount amount 
      */
     @Override
-    public double calculateDiscount(double cost, int quantity) {
+    public final double calculateDiscount(double cost, int quantity) {
          if (cost <= 0.00) {
             System.out.println("Cost must be greater than 0.00");
         } 
