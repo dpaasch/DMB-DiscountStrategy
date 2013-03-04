@@ -10,7 +10,7 @@ public class Customer {
     private String customerId;
     private String customerName;
 
-    // Constructor: requires customerId and customerName
+    /** Constructor: requires customerId and customerName */
     public Customer(String customerId, String customerName) {
         this.customerId = customerId;
         this.customerName = customerName;
