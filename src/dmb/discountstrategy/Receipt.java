@@ -14,6 +14,12 @@ public class Receipt {
 
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
+    
+    /** Constructor: accepts customer parameter (must have a customer to begin a
+     * transaction (receipt) */
+    public Receipt(Customer customer){
+        
+    }
 
     /**
      * This method is responsible for obtaining the customer information from
@@ -22,14 +28,10 @@ public class Receipt {
      * @return customer number and customer name
      */
     public String getCustomer(String customerId) {
-        if (customerId != null) {
             FakeDatabase fakeDatabase = new FakeDatabase();
             customer = fakeDatabase.findCustomer(customerId);
             return customerId;
-        } else {
-            System.out.println("Customer Number cannot be blank");
-        }
-        return null;
+            // TO DO: need to add valition to this method
     }
 
     /**
