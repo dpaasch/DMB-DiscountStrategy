@@ -29,14 +29,20 @@ public class LineItem {
         this.quantity = quantity;
     }
 
-    /** This method gets the quantity of the product being purchased.     
-     * @return quantity */
+    /** 
+     * This method gets the quantity of the product being purchased. 
+     * 
+     * @return quantity 
+     */
     public int getQuantity() {
         return quantity;
     }
 
-    /** This method sets the quantity provided by the user     
-     * @param quantity */
+    /** 
+     * This method sets the quantity provided by the user   
+     * 
+     * @param quantity 
+     */
     public void setQuantity(int quantity) {
         if (quantity > 0) {
             this.quantity = quantity;
@@ -45,21 +51,30 @@ public class LineItem {
         }
     }
 
-    /** This method gets the subtotal by calculating the unit cost * quantity.
-     * @return total */
+    /** 
+     * This method gets the subtotal by calculating the unit cost * quantity.
+     * 
+     * @return total 
+     */
     public double calculateSubtotal() {
         return product.getUnitCost() * quantity;
     }
 
-    /** This method gets the amount of the discount from the product class.
-     * @return the amount of the discount */
+    /** 
+     * This method gets the amount of the discount from the product class.
+     * 
+     * @return the amount of the discount 
+     */
     public double calculateDiscount() {
         return product.calculateDiscount(quantity);
     }
 
-    /** This method gets the information for the line item that is created within
+    /** 
+     * This method gets the information for the line item that is created within
      * the Receipt class.
-     * @return line item values */
+     * 
+     * @return line item values 
+     */
     public final String getLineItem() {
         String pId = product.getProductId();
         String pName = product.getProductName();
