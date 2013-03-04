@@ -27,7 +27,6 @@ public class Startup {
         cashRegister4.addLineItem("92303192", 1);
         cashRegister4.addLineItem("93056001", 1);
         cashRegister4.addLineItem("90889775", 3);
-        cashRegister4.finalizeSale();
-        
+        cashRegister4.finalizeSale();        
     }
 }
