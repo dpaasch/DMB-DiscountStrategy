@@ -108,8 +108,7 @@ public class Receipt {
      */
     public final void generateReceipt() {
         generateReceiptHeader();
-        System.out.println("  \t\t\tCustomer ID: " + customer.getCustomerId()
-                + "\tCustomer Name: " + customer.getCustomerName());
+        System.out.println(customer.toString());
         System.out.println("Id      " + "   Product Name               "
                 + "   Unit Cost   " + "Quantity   " + "Extended Cost   "
                 + "Amount Saved \n"
@@ -149,8 +148,8 @@ public class Receipt {
         System.out.println(" \t\t\t\tTHANK YOU FOR SHOPPING AT KOHL'S");
         System.out.println("\n");
     }
-      // Retrieve product information from the database - Removed so dependency 
-      // upon product is not required.
+    // Retrieve product information from the database - Removed so dependency 
+    // upon product is not required.
 //    public final void addItemToSale(String productId, int quantity) {
 //        FakeDatabase fakeDatabase = new FakeDatabase();
 //        Product product = fakeDatabase.findProduct(productId);
@@ -158,7 +157,6 @@ public class Receipt {
 //            addLineItem(product, quantity);
 //        }
 //    }
-    
 //    public static void main(String[] args) {
 //        Receipt receipt = new Receipt();
 //        receipt.getCustomer("1003");

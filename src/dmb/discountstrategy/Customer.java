@@ -62,10 +62,15 @@ public class Customer {
         }
     }
 
-    /** This method represents the state of the customer object. */
+    /**
+     * This method represents the state of the customer object.
+     * 
+     * @return customer information 
+     */
     @Override
     public String toString() {
-        String customer = customerId + customerName;
+        String customer = "  \t\t\tCustomer ID: " + customerId 
+                + "\tCustomer Name: " + customerName;
         return customer;
     }
 }
