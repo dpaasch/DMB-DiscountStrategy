@@ -16,14 +16,22 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    /** This method gets the customer id, which is a number unique to the customer.
-     * @return the customer identifier */
+    /**
+     * This method gets the customer id, which is a number unique to the
+     * customer.
+     *
+     * @return the customer identifier
+     */
     public String getCustomerId() {
         return customerId;
     }
 
-    /** This method sets the customer identifier to the value entered by the user.
-     * @param customerId */
+    /**
+     * This method sets the customer identifier to the value entered by the
+     * user.
+     *
+     * @param customerId
+     */
     public void setCustomerId(String customerId) {
         if (customerId != null) {
             this.customerId = customerId;
@@ -32,14 +40,20 @@ public class Customer {
         }
     }
 
-    /** This method gets the customer name. 
-     * @return the customer name */
+    /**
+     * This method gets the customer name.
+     *
+     * @return the customer name
+     */
     public String getCustomerName() {
         return customerName;
     }
 
-    /** This method sets the customer name to the value entered by the user.
-     * @param customerName */
+    /**
+     * This method sets the customer name to the value entered by the user.
+     *
+     * @param customerName
+     */
     public void setCustomerName(String customerName) {
         if (customerName != null) {
             this.customerName = customerName;
@@ -48,8 +62,14 @@ public class Customer {
         }
     }
 
-    /** This method provides the customer information (id & name) */
-    public final void getCustomer() {
-        System.out.println(customerId + "\t" + customerName);
+    /** This method represents the state of the customer object. */
+    @Override
+    public String toString() {
+        String customer = customerId + customerName;
+        return customer;
     }
 }
+//    public final void getCustomer() {
+//        System.out.println(customerId + "\t" + customerName);
+//    }
+
