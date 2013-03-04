@@ -42,6 +42,8 @@ public class FakeDatabase {
                 customer = c;
                 break;
             }
+            // Requires additional validation, such as a NullPointerException
+            // error for a null value.        
         }
 
         return customer;
@@ -57,8 +59,9 @@ public class FakeDatabase {
                 product = p;
                 break;
             }
+            // Requires additional validation, such as a NullPointerException
+            // error for a null value.            
         }
-
         return product;
     }
 }
