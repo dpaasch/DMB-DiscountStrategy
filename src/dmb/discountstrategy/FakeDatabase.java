@@ -34,7 +34,12 @@ public class FakeDatabase {
         new Product("93516223","Solid Empire Knot-Front Top", 36.00,new FlatRateDiscount()),
         new Product("93017033","Floral Net-to-Waist Tights ", 12.50,new NoDiscount())};
 
-    public final Customer findCustomer(final String custId) {
+    /** 
+     * This method is used to find the customer within the database by it's id.
+     * 
+     * @return customer information (returns null if not found)
+     */
+   public final Customer findCustomer(final String custId) {
         // validation is needed
         Customer customer = null;
         for (Customer c : customers) {
@@ -49,8 +54,12 @@ public class FakeDatabase {
         return customer;
     }
 
-    // Just call this method to find a product in the array by its id.
-    // Returns null if not found.
+   /** 
+    * This method is used to find the product information within the database by
+    * it's id.
+    * 
+    * @return product information (returns null if not found)
+    */
     public final Product findProduct(final String prodId) {
         // validation is needed
         Product product = null;

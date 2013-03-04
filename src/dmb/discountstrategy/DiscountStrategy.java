@@ -12,18 +12,21 @@ public interface DiscountStrategy {
      * 
      * @param cost
      * @param quantity
-     * @return discount amount */
+     * @return discount amount 
+     */
     public abstract double calculateDiscount(double cost, int quantity);
 
     /** This method gets the discount rate.
      * 
-     * @return the discounted rate */
+     * @return the discounted rate 
+     */
     public abstract double getDiscountRate();
 
     /** This method sets the discounted rate to the value specified by the 
      * parameter.
      * 
-     * @param discountRate */
+     * @param discountRate 
+     */
     public abstract void setDiscountRate(double discountRate);
     
 }
