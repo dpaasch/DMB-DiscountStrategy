@@ -1,8 +1,9 @@
 package dmb.discountstrategy;
 
 /**
+ * This class is responsible for maintaining information on the customer.
  *
- * @author Dawn Bykowski
+ * @author Dawn Bykowski, dpaasch@my.wctc.edu
  */
 public class Customer {
 
@@ -15,10 +16,14 @@ public class Customer {
         this.customerName = customerName;
     }
 
+    /** This method gets the customer id, which is a number unique to the customer.
+     * @return the customer identifier */
     public String getCustomerId() {
         return customerId;
     }
 
+    /** This method sets the customer identifier to the value entered by the user.
+     * @param customerId */
     public void setCustomerId(String customerId) {
         if (customerId != null) {
             this.customerId = customerId;
@@ -27,10 +32,14 @@ public class Customer {
         }
     }
 
+    /** This method gets the customer name. 
+     * @return the customer name */
     public String getCustomerName() {
         return customerName;
     }
 
+    /** This method sets the customer name to the value entered by the user.
+     * @param customerName */
     public void setCustomerName(String customerName) {
         if (customerName != null) {
             this.customerName = customerName;
@@ -39,6 +48,7 @@ public class Customer {
         }
     }
 
+    /** This method provides the customer information (id & name) */
     public final void getCustomer() {
         System.out.println(customerId + "\t" + customerName);
     }
