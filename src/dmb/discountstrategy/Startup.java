@@ -68,6 +68,5 @@ public class Startup {
         cashRegister10.addLineItem("90889775", 3);
         cashRegister10.addLineItem("93099876", 4);
         cashRegister10.addLineItem("89174290", 5);
-        cashRegister10.finalizeSale();
     }
 }

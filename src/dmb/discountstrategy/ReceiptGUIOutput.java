@@ -8,4 +8,8 @@ public class ReceiptGUIOutput implements ReceiptOutputStrategy {
     public void outputMsg(String msg) {
         JOptionPane.showMessageDialog(null, msg);
     }    
+    
+    public static void main(String[] args) {
+        String msg = "Message";
+    }
 }

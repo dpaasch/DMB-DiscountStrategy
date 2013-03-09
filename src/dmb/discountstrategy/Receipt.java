@@ -1,7 +1,9 @@
 package dmb.discountstrategy;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * This class is responsible for gathering the customer information, creating
@@ -12,7 +14,7 @@ import java.util.Date;
  */
 public class Receipt {
 
-    private LineItem[] lineItems = new LineItem[0];
+    private List<LineItem> lineItems = new ArrayList<LineItem>();
     private Customer customer;
     
     /** No-argument constructor */
@@ -53,16 +55,12 @@ public class Receipt {
     }
 
     /**
-     * This method adds the previous line item to the array by creating a temp
-     * array to hold the additional line item to the previous fixed-sized array.
+     * This method adds the previous line item to the ArrayList
      *
      * @param item
      */
     private final void addToArray(LineItem item) {
-        LineItem[] tempItems = new LineItem[lineItems.length + 1];
-        System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
-        tempItems[lineItems.length] = item;
-        lineItems = tempItems;
+        lineItems.add(item);
     }
 
     /**
@@ -87,8 +85,8 @@ public class Receipt {
      */
     public double calculateDiscount() {
         double dTotal = 0.00;  // Accumulator
-        for (int i = 0; i < lineItems.length; i++) {
-            dTotal += (lineItems[i].calculateDiscount());
+        for (LineItem item: lineItems) {
+            dTotal += item.calculateDiscount();
         }
         return dTotal;
     }
@@ -119,8 +117,11 @@ public class Receipt {
                 + "Amount Saved \n"
                 + "********   ***************************   *********   ********   "
                 + "*************   ************");
-        for (int i = 0; i < lineItems.length; i++) {
-            System.out.println(lineItems[i].getLineItem());
+//        for (int i = 0; i < lineItems.length; i++) {
+//            System.out.println(lineItems[i].getLineItem());
+//        }
+        for (LineItem lineItem: lineItems) {
+            System.out.println(lineItem.getLineItem());
         }
         generateReceiptFooter();
     }
