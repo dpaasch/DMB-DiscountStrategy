@@ -2,7 +2,8 @@ package dmb.discountstrategy;
 
 public class Startup {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  
+        
         // Create a CashRegister object
         CashRegister cashRegister = new CashRegister();        
         cashRegister.startSale("1001");
