@@ -117,9 +117,6 @@ public class Receipt {
                 + "Amount Saved \n"
                 + "********   ***************************   *********   ********   "
                 + "*************   ************");
-//        for (int i = 0; i < lineItems.length; i++) {
-//            System.out.println(lineItems[i].getLineItem());
-//        }
         for (LineItem lineItem: lineItems) {
             System.out.println(lineItem.getLineItem());
         }
